@@ -10,10 +10,7 @@ const App: React.FC<{}> = () => {
       <h1>הודעות חמ״ל</h1>
       <label>בחר את הפעולה:</label>
       <ChooseAction />
-      <textarea
-        id="givenMessage"
-        value={Object.values(actionToRepresentation)[0].description}
-      ></textarea>
+
       <button>צור והעתק</button>
       <p>לחץ על 'צור והעתק' ליצירת ההודעה המלאה והעתקתה</p>
     </>
