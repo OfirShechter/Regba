@@ -1,23 +1,19 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-
+import { actionToRepresentation } from "./config/actionToRepresentation.config";
+import ChooseAction from "./components/ChooseAction/ChooseAction";
 const App: React.FC<{}> = () => {
   return (
     <>
-      <head>
-        <link rel="stylesheet" href="index.css" />
-      </head>
-      <body>
-        <h1>הודעות חמ״ל</h1>
-        <label id="neededAction">בחר את הפעולה:</label>
-        <select name="neededAction" id="neededAction"></select>
-        <textarea id="givenMessage">
-          הדבק כאן את ההודעה שברצונך להעביר לתושבים
-        </textarea>
-        <button id="generateMessageButton">צור והעתק</button>
-        <p id="messageStatus">לחץ על 'צור והעתק' ליצירת ההודעה המלאה והעתקתה</p>
-      </body>
+      <h1>הודעות חמ״ל</h1>
+      <label>בחר את הפעולה:</label>
+      <ChooseAction/>
+      <textarea id="givenMessage">
+        {Object.values(actionToRepresentation)[0].description}
+      </textarea>
+      <button>צור והעתק</button>
+      <p>לחץ על 'צור והעתק' ליצירת ההודעה המלאה והעתקתה</p>
     </>
   );
 };
