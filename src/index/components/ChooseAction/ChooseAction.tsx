@@ -5,7 +5,7 @@ const ChooseAction: FC = () => {
   return (
     <select>
       {Object.keys(actionToRepresentation).map((action) => (
-        <option value={action}>
+        <option value={action} key={action}>
           {`${actionToRepresentation[action].hebrew} ${actionToRepresentation[action].icon}`}
         </option>
       ))}
