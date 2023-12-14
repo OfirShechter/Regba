@@ -1,9 +1,8 @@
-import { createSelector, createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { RootState } from "../../store";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import {
   actionToRepresentation,
   MessageAction,
-} from "../../../index/config/actionToRepresentation.config";
+} from "../../../popup/config/actionToRepresentation.config";
 
 export enum MessageStatus {
   CREATED,

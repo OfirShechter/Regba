@@ -2,7 +2,7 @@
   "name": "regba",
   "version": "1.0.0",
   "description": "Hamal chrome extension ",
-  "main": "index.js",
+  "main": "popup.js",
   "scripts": {
     "build:dev": "webpack --watch --progress --config webpack.dev.js",
     "build:prod": "webpack --watch --progress --config webpack.prod.js"

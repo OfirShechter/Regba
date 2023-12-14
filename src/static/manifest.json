@@ -13,8 +13,14 @@
 
   "action": {
     "default_icon": "./icons/il-square-16.png",
-    "default_popup": "index.html"
+    "default_popup": "popup.html"
   },
+
+  "permissions": [
+    "activeTab",
+    "clipboardWrite"
+  ],
+
 
   "content_security_policy": {
     "extension_pages": "script-src 'self'; object-src 'self';"

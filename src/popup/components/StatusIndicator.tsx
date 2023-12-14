@@ -13,6 +13,7 @@ const statusToMessageMapper: { [k in MessageStatus]: string } = {
 
 const StatusIndicator: FC = () => {
   const status = useAppSelector(selectMessageStatus);
+  console.log(status)
   return <p>{statusToMessageMapper[status]}</p>;
 };
 

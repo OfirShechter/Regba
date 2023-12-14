@@ -5,7 +5,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
   entry: {
-    index: path.resolve('src/index/index.tsx'),
+    popup: path.resolve('src/popup/popup.tsx'),
     // options: path.resolve('src/options/options.tsx'),
   },
   module: {
@@ -41,7 +41,7 @@ module.exports = {
       ]
     }),
     ...getHtmlPlugins([
-      'index',
+      'popup',
     ]),
   ],
   output: {
@@ -60,6 +60,6 @@ function getHtmlPlugins(chunks) {
     title: 'Hamal Extension',
     filename: `${chunk}.html`,
     chunks: [chunk],
-    template: path.resolve("src","index","index.html")
+    template: path.resolve("src","popup","popup.html")
   }))
 }
