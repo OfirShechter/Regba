@@ -12,11 +12,14 @@ export type MessageAction = keyof typeof actionToRepresentation;
 export type MessageCreatorState = {
   status: MessageStatus;
   action: MessageAction;
+  description: string;
 };
 
+const defaultAction = Object.keys(actionToRepresentation)[0] as MessageAction;
 const initialState: MessageCreatorState = {
   status: MessageStatus.DID_NOT_CREATED,
-  action: Object.keys(actionToRepresentation)[0] as MessageAction,
+  action: defaultAction,
+  description: actionToRepresentation[defaultAction].description,
 };
 const messageCreatorSlice = createSlice({
   name: "message-creator",
@@ -27,7 +30,11 @@ const messageCreatorSlice = createSlice({
     },
     setAction(state, action: PayloadAction<MessageAction>) {
       state.action = action.payload;
+      state.description = actionToRepresentation[action.payload].description;
     },
+    setDescription(state, action: PayloadAction<string>) {
+        state.description = action.payload
+    }
   },
 });
 
@@ -42,8 +49,13 @@ export const selectMessageStatus = createSelector(
 );
 
 export const selectMessageAction = createSelector(
-    selectMessageCreactor,
-    (state) => state.action
-  );
+  selectMessageCreactor,
+  (state) => state.action
+);
+
+export const selectMessageDescription = createSelector(
+  selectMessageCreactor,
+  (state) => state.description
+);
 
 export default messageCreatorSlice.reducer;
