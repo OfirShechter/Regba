@@ -1,6 +1,9 @@
 import { createSelector, createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { RootState } from "../store";
-import { actionToRepresentation, MessageAction } from "../../index/config/actionToRepresentation.config";
+import { RootState } from "../../store";
+import {
+  actionToRepresentation,
+  MessageAction,
+} from "../../../index/config/actionToRepresentation.config";
 
 export enum MessageStatus {
   CREATED,
@@ -32,29 +35,11 @@ const messageCreatorSlice = createSlice({
       state.description = actionToRepresentation[action.payload].description;
     },
     setDescription(state, action: PayloadAction<string>) {
-        state.description = action.payload
-    }
+      state.description = action.payload;
+    },
   },
 });
 
 export const messageCreatorActions = messageCreatorSlice.actions;
-
-export const selectMessageCreactor = (state: RootState) =>
-  state.messageCreactor;
-
-export const selectMessageStatus = createSelector(
-  selectMessageCreactor,
-  (state) => state.status
-);
-
-export const selectMessageAction = createSelector(
-  selectMessageCreactor,
-  (state) => state.action
-);
-
-export const selectMessageDescription = createSelector(
-  selectMessageCreactor,
-  (state) => state.description
-);
 
 export default messageCreatorSlice.reducer;

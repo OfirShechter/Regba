@@ -7,15 +7,7 @@ export async function generateMessage(action: MessageAction, message: string) {
     // Copy the text inside the text field
     await navigator.clipboard.writeText(
       await genMessage(action, actionInfo, message)
-    );
-  
-    document.getElementById("messageStatus").innerHTML =
-    "ההודעה הועתקה";
-    setTimeout(() => {
-      document.getElementById("messageStatus").innerHTML =
-        "בחר אופציה ולחץ על 'צור והעתק' ליצירת הודעה אחרת והעתקתה";
-    }, 5000);
-  
+    );  
   }
   
 async function genMessage(action: MessageAction, actionInfo: MessageInfo, givenMessage: string) {

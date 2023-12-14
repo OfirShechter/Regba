@@ -1,10 +1,8 @@
 import React, { useState } from "react";
 import { FC } from "react";
 import { useAppDispatch, useAppSelector } from "../../store/store";
-import {
-  messageCreatorActions,
-  selectMessageDescription,
-} from "../../store/features/message-creator.slice";
+import { messageCreatorActions } from "../../store/features/message-creator/message-creator.slice";
+import { selectMessageDescription } from "../../store/features/message-creator/message-creator.selector";
 
 const MessageDescription: FC = () => {
   const dispatch = useAppDispatch();
