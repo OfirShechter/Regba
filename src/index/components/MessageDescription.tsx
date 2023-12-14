@@ -1,12 +1,8 @@
 import React, { useState } from "react";
 import { FC } from "react";
-import { actionToRepresentation } from "../config/actionToRepresentation.config";
 import { useAppDispatch, useAppSelector } from "../../store/store";
 import {
-  MessageAction,
   messageCreatorActions,
-  selectMessageAction,
-  selectMessageCreactor,
   selectMessageDescription,
 } from "../../store/features/message-creator.slice";
 

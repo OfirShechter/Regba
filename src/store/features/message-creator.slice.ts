@@ -1,6 +1,6 @@
 import { createSelector, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { RootState } from "../store";
-import { actionToRepresentation } from "../../index/config/actionToRepresentation.config";
+import { actionToRepresentation, MessageAction } from "../../index/config/actionToRepresentation.config";
 
 export enum MessageStatus {
   CREATED,
@@ -8,7 +8,6 @@ export enum MessageStatus {
   DID_NOT_CREATED,
 }
 
-export type MessageAction = keyof typeof actionToRepresentation;
 export type MessageCreatorState = {
   status: MessageStatus;
   action: MessageAction;
